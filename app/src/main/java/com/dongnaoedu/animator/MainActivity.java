@@ -14,7 +14,6 @@ import android.graphics.Point;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
@@ -25,11 +24,7 @@ import android.view.animation.BounceInterpolator;
 import android.view.animation.CycleInterpolator;
 import android.widget.ImageView;
 
-public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
-	@Override
-	public String getAppName(){
-		return BuildConfig.APP_NAME;
-	}
+public class MainActivity extends ActionBarActivity {
 
 	private ImageView iv;
 
@@ -44,21 +39,21 @@ public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
 		Animation loadAnimation = AnimationUtils.loadAnimation(this, R.anim.abc_fade_in);
 		
 		
-		//1.-------------ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--------------------
+		//1.-------------ÊôÐÔ¶¯»­»ù´¡--------------------
 //		iv.setTranslationX(100);
 //		iv.setScaleX(scaleX);
 //		iv.setAlpha(alpha);
 //		iv.setRotation(rotation)
 //		iv.setBackgroundColor(color);
 		
-//		//Ö»Òªviewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½setXXX()ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ïµ½ï¿½ä»¯ï¿½ï¿½Ä¿ï¿½ï¿½
+//		//Ö»ÒªviewÀïÃæÓÐsetXXX()·½·¨¾Í¿ÉÒÔÍ¨¹ý·´Éä´ïµ½±ä»¯µÄÄ¿µÄ
 //		ObjectAnimator oa = ObjectAnimator.ofFloat(iv, "translationX", 0f,200f);
 ////		ObjectAnimator oa = ObjectAnimator.ofFloat(iv, "backgroundColor", Color.RED,Color.BLUE);
 //		oa.setDuration(500);
 //		oa.start();
 		
-		//2.-------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ê±Ö´ï¿½ï¿½----------------------
-/*		//ï¿½ï¿½ï¿½ï¿½ 1) ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//2.-------------¶à¸ö¶¯»­Í¬Ê±Ö´ÐÐ----------------------
+/*		//·½·¨ 1) ÉèÖÃ¶¯»­¼àÌý£¬Í¬²½²Ù×÷ÆäËûµÄÊôÐÔ
 		ObjectAnimator animator = ObjectAnimator.ofFloat(iv, "hehe", 0f,100f);
 //		ObjectAnimator animator = ObjectAnimator.ofFloat(iv, "translationX", 0f,100f);
 		animator.setDuration(300);
@@ -66,9 +61,9 @@ public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
 			
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {
-				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½
-//				animation.getAnimatedFraction();//ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ÐµÄ°Ù·Ö±ï¿½ 0~1 //API 12+
-				float value = (float) animation.getAnimatedValue();//ï¿½Ãµï¿½0f~100fï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Öµ
+				// ¼àÌý¶¯»­»Øµ÷
+//				animation.getAnimatedFraction();//¶¯»­Ö´ÐÐµÄ°Ù·Ö±È 0~1 //API 12+
+				float value = (float) animation.getAnimatedValue();//µÃµ½0f~100fµ±ÖÐµÄÕâ¸öÊ±¼äµã¶ÔÓ¦µÄÖµ
 				iv.setScaleX(0.5f+value/200);
 				iv.setScaleY(0.5f+value/200);
 //				iv.setTranslationX(value);
@@ -108,21 +103,21 @@ public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
 //			}
 //		});
 		
-		//ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½---------------ValueAnimator---ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Öµï¿½ä»¯ï¿½ï¿½ï¿½ï¿½ValueAnimator---------------
+		//·½·¨ 2£©---------------ValueAnimator---Èç¹ûÖ»ÐèÒª¼àÌýÖµ±ä»¯¾ÍÓÃValueAnimator---------------
 /*		ValueAnimator animator = ValueAnimator.ofFloat(0f, 200f);
 		animator.setDuration(200);
 		animator.addUpdateListener(new AnimatorUpdateListener() {
 			
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {
-				float value = (float) animation.getAnimatedValue();//ï¿½Ãµï¿½0f~100fï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Öµ
+				float value = (float) animation.getAnimatedValue();//µÃµ½0f~100fµ±ÖÐµÄÕâ¸öÊ±¼äµã¶ÔÓ¦µÄÖµ
 				iv.setScaleX(0.5f+value/200);
 				iv.setScaleY(0.5f+value/200);
 			}
 		});
 		animator.start();
 */
-		//ï¿½ï¿½ï¿½ï¿½ 3) 
+		//·½·¨ 3) 
 //		PropertyValuesHolder holder1 = PropertyValuesHolder.ofFloat("alpha", 1f,0.5f);
 //		PropertyValuesHolder holder2 = PropertyValuesHolder.ofFloat("scaleX", 1f,0.5f);
 //		PropertyValuesHolder holder3 = PropertyValuesHolder.ofFloat("scaleY", 1f,0.5f);
@@ -130,26 +125,26 @@ public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
 //		animator.setDuration(200);
 //		animator.start();
 		
-		//ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½-------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-----------------
+		//·½·¨ 4£©-------------¶¯»­¼¯ºÏ-----------------
 /*	ObjectAnimator animator1 = ObjectAnimator.ofFloat(iv, "translationX", 0f,100f);
 //		animator1.setRepeatCount(3);
 		ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv, "alpha", 0f,1f);
-//		animator2.setStartDelay(startDelay)//ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½Ö´ï¿½ï¿½
+//		animator2.setStartDelay(startDelay)//ÉèÖÃÑÓ³ÙÖ´ÐÐ
 		ObjectAnimator animator3 = ObjectAnimator.ofFloat(iv, "scaleX", 0f,2f);
 		AnimatorSet animatorSet = new AnimatorSet();
 		animatorSet.setDuration(500);
-//		animatorSet.play(animator3).with(animator2).after(animator1);//animator1ï¿½ï¿½Ç°ï¿½ï¿½
-		animatorSet.play(animator3).with(animator2).before(animator1);//animator1ï¿½Úºï¿½ï¿½ï¿½
+//		animatorSet.play(animator3).with(animator2).after(animator1);//animator1ÔÚÇ°Ãæ
+		animatorSet.play(animator3).with(animator2).before(animator1);//animator1ÔÚºóÃæ
 //		animatorSet.playTogether(animator1,animator2,animator3);
 		animatorSet.playSequentially(animator1,animator2,animator3);
 		animatorSet.start();*/
 	
 		
-		//4.------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½---ï¿½ï¿½ï¿½ï³µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½-----------------
+		//4.------------------°¸Àý£ºÊµÏÖ×ÔÓÉÂäÌåÅ×ÎïÏßÐ§¹û---¹ºÎï³µ¶¯»­¡¢¹ÉÖ¸Êý-----------------
 		/**
-		 * x: ï¿½ï¿½ï¿½ï¿½
-		 * y: ï¿½ï¿½ï¿½Ù¶ï¿½ y=vt=1/2*g*t*t
-		 * ï¿½ï¿½Öµï¿½ï¿½---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PointF(x,y)
+		 * x: ÔÈËÙ
+		 * y: ¼ÓËÙ¶È y=vt=1/2*g*t*t
+		 * ¹ÀÖµÆ÷---¿ØÖÆ×ø±êPointF(x,y)
 		 */
 /*		ValueAnimator valueAnimator = new ValueAnimator();
 //		valueAnimator.setInterpolator(value)
@@ -157,18 +152,18 @@ public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
 		valueAnimator.setObjectValues(new PointF(0, 0));
 //		valueAnimator.setObjectValues(new PointF(0, 0),new PointF(10, 10));
 		final PointF pointF = new PointF();
-		//ï¿½ï¿½É«ï¿½ï¿½Öµï¿½ï¿½
+		//ÑÕÉ«¹ÀÖµÆ÷
 //		setBackgroundColor((Integer) sArgbEvaluator.evaluate(ratio, mDiscrollveFromBgColor, mDiscrollveToBgColor));
 		valueAnimator.setEvaluator(new TypeEvaluator<PointF>() {
 
 			@Override
 			public PointF evaluate(float fraction, PointF startValue,
 					PointF endValue) {
-				// ï¿½ï¿½Öµï¿½ï¿½ï¿½ã·½ï¿½ï¿½---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ÐµÄ¹ï¿½ï¿½Ìµï¿½ï¿½Ð¸ï¿½Ô¤ï¿½Ä±ï¿½ï¿½ï¿½ï¿½Ôµï¿½Öµ---ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-				//ï¿½ï¿½ï¿½Ïµï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
-				//xï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ x=v*t Îªï¿½Ë¿ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½fraction*5
+				// ¹ÀÖµ¼ÆËã·½·¨---¿ÉÒÔÔÚÖ´ÐÐµÄ¹ý³Ìµ±ÖÐ¸ÉÔ¤¸Ä±äÊôÐÔµÄÖµ---×öÐ§¹û£ºÓÃ×Ô¼ºµÄËã·¨À´¿ØÖÆ
+				//²»¶ÏµØÈ¥¼ÆËãÐÞ¸Ä×ø±ê
+				//xÔÈËÙÔË¶¯ x=v*t ÎªÁË¿´ÆðÀ´Ð§¹ûºÃÎÒÈÃt±ä³Éfraction*5
 				pointF.x = 100f*(fraction*5);
-				//ï¿½ï¿½ï¿½Ù¶ï¿½ y=vt=1/2*g*t*t
+				//¼ÓËÙ¶È y=vt=1/2*g*t*t
 //				pointF.y = 0.5f*9.8f*(fraction*5)*(fraction*5);
 				pointF.y = 10f*0.5f*9.8f*(fraction*5)*(fraction*5);
 				return pointF;
@@ -186,7 +181,7 @@ public class MainActivity extends com.lythonliu.LinkAppCompatActivity {
 		valueAnimator.start();
 		*/
 		
-		//6.---------ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Interpolater-----------
+		//6.---------²åÖµÆ÷£¨¼ÓËÙÆ÷£©Interpolater-----------
 		ObjectAnimator oa = ObjectAnimator.ofFloat(iv, "translationY", 0f,1000f);
 		oa.setDuration(800);
 //		TimeInterpolator

@@ -8,6 +8,7 @@ MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\lythonliu\.gradle
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\7ea453656e9f615a39b905d15259ab10\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\b5956bf2a230ee4c82c47cb3492fa747\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\e7334179e252527c81bf7f3a15271339\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.lythonliu:CodeLinker:1.0.5] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\CodeLinker-1.0.5.aar\09001709a1bdacdb3b49171ae6a223a2\AndroidManifest.xml:2:1-11:12
 INJECTED from D:\projack\as\dncode\ui\15\Lsn16_Animator\app\src\main\AndroidManifest.xml:2:1-27:12
 INJECTED from D:\projack\as\dncode\ui\15\Lsn16_Animator\app\src\main\AndroidManifest.xml:2:1-27:12
 INJECTED from D:\projack\as\dncode\ui\15\Lsn16_Animator\app\src\main\AndroidManifest.xml:2:1-27:12
@@ -37,6 +38,8 @@ MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\lython
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\b5956bf2a230ee4c82c47cb3492fa747\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\e7334179e252527c81bf7f3a15271339\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\e7334179e252527c81bf7f3a15271339\AndroidManifest.xml:20:5-43
+MERGED from [com.github.lythonliu:CodeLinker:1.0.5] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\CodeLinker-1.0.5.aar\09001709a1bdacdb3b49171ae6a223a2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lythonliu:CodeLinker:1.0.5] C:\Users\lythonliu\.gradle\caches\transforms-1\files-1.1\CodeLinker-1.0.5.aar\09001709a1bdacdb3b49171ae6a223a2\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\projack\as\dncode\ui\15\Lsn16_Animator\app\src\main\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\projack\as\dncode\ui\15\Lsn16_Animator\app\src\main\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary

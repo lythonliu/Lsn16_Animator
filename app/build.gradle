@@ -7,7 +7,7 @@ android {
     defaultConfig {
         buildConfigField 'String','APP_NAME','"Lsn16_Animator"'
         applicationId "com.dongnaoedu.animator"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 21
     }
 
