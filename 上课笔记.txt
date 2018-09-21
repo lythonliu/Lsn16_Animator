@@ -1,0 +1,33 @@
+
+Ricky 罗鼎
+QQ: 576013289
+
+动画  (今天笔记主要在代码里面，大家可以复制过来自己整理下)
+-----------------------
+一、传统的2D动画---补间动画+帧动画
+	实现的本质是什么？canvas绘制的---矩阵变换Matrix
+二、属性动画
+API 3.0以后。
+1.属性动画的系统使用；
+2.案例
+3.源码解析
+4.结合前面一些特效+属性动画---综合案例
+//作业：刷鲜花效果
+
+1.什么是属性动画？属性动画有什么特点？
+	button.setTranslationX(200);
+	和传统补间动画的区别：---会改变view的实际属性。比如：改变button的位置，平移后的状态还是可以被点击的
+2.属性动画
+3.0API以下的兼容方案：NineOldAndroid.jar
+	1）ObjectAnimator
+	2）ValueAnimator
+	3）PropertyValueHolder
+	4）TypeEvaluator
+	5）Interpolator 插值器
+
+facebook---rebound
+
+
+
+
+
